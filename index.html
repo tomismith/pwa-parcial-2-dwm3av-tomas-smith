@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERCA</title>
+   
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700;800&family=Nunito+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="manifest" href="manifest.webmanifest">
+
+</head>
+
+
+<body class="bg-dark">
+    <nav class="navbar navbar-expand-lg bg-dark text-light ">
+        <div class="container-xl container-fluid ">
+            <div class="align-self-start ">
+                <a class="navbar-brand mt-2 p-2 " href="/index.html">
+                    <img src="./img/banner terca.png" alt="Logo TERCA" class="d-inline-block align-text-top m-2" id="logo">
+                  
+                </a>
+               
+            </div>
+
+            <div  id="divbotonDescarga" class="ps-3"><button type="button" id="botonDescarga">Descargá la
+                App</button></div>
+    </div>
+
+            <div class="align-self-end d-flex ">
+                <div class="mt-3 mt-md-4 mt-lg-2 ">
+
+                    <button type="button" class="btn text-light position-relative" data-bs-toggle="modal"
+                        data-bs-target="#modalCarrito">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            class="bi bi-cart-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                        </svg>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-green text-dark"
+                            id="monstrarCantidad">
+                            0
+                            <span class="visually-hidden">Productos en el carrito</span>
+                        </span>
+                    </button>
+                </div>
+                <div>
+                    <button class="navbar-toggler p-3 mt-2 ms-3" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon navbar-dark"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end text-end p-2" id="navbarNavAltMarkup">
+                        <div class="navbar-nav d-flex ">
+                            
+                            
+                            <div><a class="nav-link text-light" href="#contacto">Contacto</a></div>
+                            
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <header class="mx-auto d-flex justify-content-center">
+
+    </header>
+
+    <main>
+
+        <div>
+            <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="true">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="img/banner terca.jpg" class="d-block w-100" alt="...">
+                </div>
+                
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          
+        <!-- sección tienda-->
+        <section id="tienda" class="my-lg-5">
+            <div class="row container mx-auto mt-4">
+                <div class="col-12 my-4 text-center d-flex">
+                    <div class="row">
+                      
+                        <div class="w-100 col-12 text-center" id="liveAlertPlaceholder"></div>
+                    </div>
+                   
+                </div>
+                <div class="col-12">                   
+                    <div class="col-12 my-3">
+                        
+                        <label for="tipo-producto"><b class="d-none text-dark-violet fs-4">Categoría:</b></label>
+                        <select name="tipo-producto" id="tipo-producto" class="d-none">
+                            <option value="todas">Todas</option>
+                            <option value="mandala">Mandala</option>
+                            <option value="infantil">Infantil</option>
+                            <option value="zentangle">Zentangle</option>
+                        </select>
+                    </div>
+                    <div class="col-12 my-3" id="contenedorOferta"></div>
+                    
+                    <div class="row d-flex g-3" id="productosTienda">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        
+
+
+        <!--seccion contacto-->
+        <section id="contacto" class="py-5">
+            <div style="justify-content: center;" id="container-formulario" class="row container mx-auto py-5 d-flex">
+                <div class="col-sm-12 col-lg-7 d-flex">
+                    
+                </div>
+                <div class="col-sm-12  col-lg-7">
+                    <em>Suscribite a nuestro newsletter y recibí las últimas novedades y promociones.</em>
+                </div>
+
+                <div class="col-12 col-lg-7 col-xxl-7">
+                    <form class="row g-3" action="form_process.php" method="post">
+                        <h1 class="text-light">Contacto</h1>
+                        <div class="col-xxl-6">
+                            <label for="inputNombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control border-brown" id="inputNombre" name="inputNombre"
+                                placeholder="Juan" required>
+                            <p class="form-text" id="inputNombre">Sin números ni caracteres especiales.</p>
+                        </div>
+                        <div class="col-xxl-6">
+                            <label for="inputApellido" class="form-label">Apellido</label>
+                            <input type="text" class="form-control border-brown" id="inputApellido" name="inputApellido"
+                                placeholder="Pérez" required>
+                            <p class="form-text" id="inputApellido">Sin números ni caracteres especiales.</p>
+                        </div>
+                        <div class="col-12">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control border-brown" id="inputEmail" name="inputEmail"
+                                aria-describedby="d-email" required>
+                            <p class="form-text" id="d-email">emaildeejemplo@hotmail.com</p>
+                        </div>
+
+                        <div class="mb-3 col-xxl-12">
+                            <label for="inputComentario" class="form-label">Comentario</label>
+                            <textarea class="form-control border-brown" id="inputComentario" name="inputComentario"
+                                rows="5" required></textarea>
+                        </div>
+
+
+                        <div class="col-xxl-12">
+                            <button type="submit" class="btn btn-secondary">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Modal Carrito-->
+        <div class=" modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable  modal-fullscreen p-5">
+                <div class="row modal-content">
+                    <div class=" bg-dark col-12 modal-header">
+                        <h2 style="justify-content: center;" class="modal-title text-light  fw-bold" id="modalCarritoLabel">Carrito</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <!--div que contiene todos los productos-->
+                    <div class="col-12 modal-body d-flex flex-column" id="contenedorItemCarrito">
+                        <!--div de cada producto-->
+
+                    </div>
+                    <div class="d-flex row mx-5">
+                        <div class="col-4">
+                            <h2>Cantidad de productos: <span id="tuTotalCantidad"></span></h2>
+                        </div>
+                        <div class="col-4">
+                            <h2>Precio Total: $ <span class="tuTotal"></span></h2>
+                        </div>
+                        <div class="col-4 d-flex justify-content-center">
+
+                            <div class="pe-3"><button type="button" class="btn btn-secondary w-100"
+                                    id="vaciarCarrito">Vaciar carrito</button></div>
+                            <div>
+                                <a href="./checkout.html" role="button"
+                                    class="btn btn-secondary w-100">Comprar</a>
+
+                            </div>
+
+                        </div>
+                        <div class="col-3">
+
+                        </div>
+                    </div>
+
+                    <div class="col-12 modal-footer">
+
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class=" modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable  modal-fullscreen p-5">
+                <div class="row modal-content">
+                    <div class=" bg-dark col-12 modal-header">
+                        <h2 class="modal-title text-light fw-bold" id="exampleModalLabel">Detalle de producto:</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="col-12 modal-body d-flex" id="contenedorDescripLargo">
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </main>
+
+
+
+
+    <footer  class="justify-content-center bg-white py-lg-3">
+        
+            
+            <div class="col-12 col-lg-4 align-self-center datos-footer text-center">
+                <ul>
+                    <li>Tomás Smith</li>
+                     tomas.smith@davinci.edu.ar</li>
+                    <li> DWN3AV - 2023</li>
+                    <li>PWA - <b>Parcial:</b> 2</li>
+                    
+                </ul>
+               
+
+            </div>
+          
+
+    </footer>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+        integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
+        async></script>
+    
+    <script src="registro-sw.js"></script>
+    <script src="./js/CarritoClass.js"></script>
+    <script src="./js/ProductoClass.js"></script>
+    <script src="sw.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

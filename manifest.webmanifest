@@ -1,0 +1,29 @@
+
+{
+    "name": "TERCA",
+    "short_name": "TERCA",
+    "description": "Ropa unisex",
+    "scope": "./",
+    "start_url": "./",
+    "icons": [
+      {
+        "src": "img/icons/icon-16x16.png",
+        "sizes": "16x16",
+        "type": "image/png"
+      },
+      {
+        "src": "img/icons/icon-144x144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      },
+      {
+        "src": "img/icons/icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "orientation" : "any",
+    "display": "standalone",
+    "theme_color": "#2f4538 ",
+    "background_color": "#7d8471"
+  }
